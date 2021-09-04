@@ -17,12 +17,21 @@ export default function LoginPage() {
 	const handleLogin = async () => {
 		try {
 			setLoading(true);
-			let { headers } = await AuthApi.login(email, password);
-			let auth = { uid: headers.uid, accessToken: headers["access-token"], client: headers.client };
-			dispatch(setAuth(auth));
-			router.push("/");
+			let result = await AuthApi.login(email, password);
+			let headers = result.headers;
+
+			if (result.data.data.is_admin) {
+				let auth = {
+					uid: headers.uid,
+					accessToken: headers["access-token"],
+					client: headers.client,
+				};
+				dispatch(setAuth(auth));
+				router.push("/");
+			}
 		} catch (error) {
 			console.log(error);
+		} finally {
 			setLoading(false);
 		}
 	};

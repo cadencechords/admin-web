@@ -20,6 +20,8 @@ export default function Button({
 			setStyles(
 				"rounded-md p-2 bg-green-500 hover:bg-green-600 focus:bg-green-600 transition-colors text-white font-semibold"
 			);
+		} else if (variant === "text") {
+			setStyles("font-semibold");
 		}
 	}, [variant, disabled]);
 
