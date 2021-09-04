@@ -20,4 +20,8 @@ export default class TeamsApi {
 	static getSongs(teamId) {
 		return axios.get(`${TEAMS_URL}/${teamId}/songs`, { headers: constructAuthHeaders() });
 	}
+
+	static getBinders(teamId) {
+		return axios.get(`${TEAMS_URL}/${teamId}/binders`, { headers: constructAuthHeaders() });
+	}
 }

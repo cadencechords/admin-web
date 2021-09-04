@@ -11,7 +11,7 @@ export default function TeamDetailPage() {
 	const [team, setTeam] = useState();
 	const [members, setMembers] = useState();
 	const [songs, setSongs] = useState();
-	// const [binders, setBinders] = useState();
+	const [binders, setBinders] = useState();
 	const [loading, setLoading] = useState(false);
 	const id = useParams().id;
 
@@ -40,7 +40,9 @@ export default function TeamDetailPage() {
 				members={members}
 				onMembersLoaded={setMembers}
 				songs={songs}
+				binders={binders}
 				onSongsLoaded={setSongs}
+				onBindersLoaded={setBinders}
 			/>
 		</PageLoader>
 	);

@@ -1,4 +1,5 @@
 import Tabs from "./Tabs";
+import TeamBindersDetails from "./TeamBinderDetails";
 import TeamMembersDetails from "./TeamMembersDetails";
 import TeamSongsDetails from "./TeamSongsDetails";
 
@@ -9,6 +10,7 @@ export default function TeamTabs({
 	songs,
 	onMembersLoaded,
 	onSongsLoaded,
+	onBindersLoaded,
 }) {
 	return (
 		<div>
@@ -17,6 +19,7 @@ export default function TeamTabs({
 				panels={[
 					<TeamMembersDetails members={members} team={team} onMembersLoaded={onMembersLoaded} />,
 					<TeamSongsDetails songs={songs} team={team} onSongsLoaded={onSongsLoaded} />,
+					<TeamBindersDetails binders={binders} team={team} onBindersLoaded={onBindersLoaded} />,
 				]}
 			/>
 		</div>
