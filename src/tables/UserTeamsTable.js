@@ -5,14 +5,19 @@ import TableData from "./TableData";
 import TableHead from "./TableHead";
 import TableRow from "./TableRow";
 import { formatDateFromString } from "../utils/date";
+import { useHistory } from "react-router-dom";
 
 export default function UserTeamsTable({ memberships }) {
+	const router = useHistory();
+	const handleClick = (membership) => {
+		router.push(`/teams/${membership.team_id}`);
+	};
 	return (
 		<Table>
 			<TableHead headers={["Team", "Joined", "Admin", "Position"]} />
 			<TableBody>
 				{memberships?.map((membership) => (
-					<TableRow key={membership.id} selectable>
+					<TableRow key={membership.id} selectable onClick={() => handleClick(membership)}>
 						<TableData className="py-3">{membership?.team?.name}</TableData>
 						<TableData>{formatDateFromString(membership.created_at)}</TableData>
 						<TableData>
