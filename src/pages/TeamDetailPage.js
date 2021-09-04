@@ -24,7 +24,7 @@ export default function TeamDetailPage() {
 		}
 
 		fetchTeam();
-	}, []);
+	}, [id]);
 
 	return (
 		<PageLoader loading={loading}>
