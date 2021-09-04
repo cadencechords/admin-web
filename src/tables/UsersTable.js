@@ -3,7 +3,7 @@ import TableBody from "./TableBody";
 import TableData from "./TableData";
 import TableHead from "./TableHead";
 import TableRow from "./TableRow";
-import UserTableProfile from "./UserTableProfile";
+import UserTableProfile from "../components/UserTableProfile";
 import { formatDateFromString } from "../utils/date";
 import { useHistory } from "react-router-dom";
 

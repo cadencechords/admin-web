@@ -1,6 +1,7 @@
 import HomeIcon from "@heroicons/react/outline/HomeIcon";
 import SideNavLink from "./SideNavLink";
 import UserCircleIcon from "@heroicons/react/outline/UserCircleIcon";
+import UserGroupIcon from "@heroicons/react/outline/UserGroupIcon";
 
 export default function SideNav() {
 	return (
@@ -8,9 +9,13 @@ export default function SideNav() {
 			<SideNavLink to="/" className="mb-1" exact>
 				<HomeIcon className="mr-2 w-5 h-5" /> Home
 			</SideNavLink>
-			<SideNavLink to="/users">
+			<SideNavLink to="/users" className="mb-1">
 				<UserCircleIcon className="mr-2 w-5 h-5" />
 				Users
+			</SideNavLink>
+			<SideNavLink to="/teams">
+				<UserGroupIcon className="mr-2 w-5 h-5" />
+				Teams
 			</SideNavLink>
 		</div>
 	);

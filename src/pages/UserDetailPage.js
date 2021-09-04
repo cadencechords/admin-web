@@ -4,7 +4,7 @@ import Divider from "../components/Divider";
 import PageLoader from "../components/PageLoader";
 import Title from "../components/Title";
 import UserAccountDetails from "../components/UserAccountDetails";
-import UserTeamsTable from "../components/UserTeamsTable";
+import UserTeamsTable from "../tables/UserTeamsTable";
 import UsersApi from "../api/usersApi";
 import { useParams } from "react-router-dom";
 

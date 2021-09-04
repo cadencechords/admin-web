@@ -1,34 +1,35 @@
 import { useEffect, useState } from "react";
 
 import PageLoader from "../components/PageLoader";
+import TeamsApi from "../api/teamsApi";
+import TeamsTable from "../tables/TeamsTable";
 import Title from "../components/Title";
-import UsersApi from "../api/usersApi";
-import UsersTable from "../tables/UsersTable";
 
-export default function UsersIndexPage() {
-	const [users, setUsers] = useState([]);
+export default function TeamsIndexPage() {
+	const [teams, setTeams] = useState([]);
 	const [loading, setLoading] = useState(false);
 
 	useEffect(() => {
-		async function fetchUsers() {
+		async function fetchTeams() {
 			try {
 				setLoading(true);
-				let { data } = await UsersApi.getAll();
-				setUsers(data);
+				let { data } = await TeamsApi.getAll();
+				setTeams(data);
 			} catch (error) {
 				console.log(error);
 			} finally {
 				setLoading(false);
 			}
 		}
-
-		fetchUsers();
+		fetchTeams();
 	}, []);
+
 	return (
 		<div>
-			<Title className="mb-4">All Users {users?.length > 0 && `(${users.length})`}</Title>
+			<Title className="mb-4">All Teams {teams?.length > 0 && `(${teams.length})`}</Title>
+
 			<PageLoader loading={loading}>
-				<UsersTable users={users} />
+				<TeamsTable teams={teams} />
 			</PageLoader>
 		</div>
 	);

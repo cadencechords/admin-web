@@ -2,6 +2,7 @@ import { Route, Switch, useHistory } from "react-router-dom";
 
 import HomePage from "../pages/HomePage";
 import SideNav from "./SideNav";
+import TeamsIndexPage from "../pages/TeamsIndexPage";
 import TopNav from "./TopNav";
 import UserDetailPage from "../pages/UserDetailPage";
 import UsersIndexPage from "../pages/UsersIndexPage";
@@ -23,6 +24,9 @@ export default function SecuredRoutes() {
 				<div className="ml-60 mt-16 px-8">
 					<div className="max-w-2xl mx-auto">
 						<Switch>
+							<Route path="/teams" exact>
+								<TeamsIndexPage />
+							</Route>
 							<Route path="/users/:id" exact>
 								<UserDetailPage />
 							</Route>
