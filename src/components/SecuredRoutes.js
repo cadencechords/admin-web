@@ -1,5 +1,6 @@
 import { Route, Switch, useHistory } from "react-router-dom";
 
+import BottomNav from "./BottomNav";
 import HomePage from "../pages/HomePage";
 import SideNav from "./SideNav";
 import TeamDetailPage from "../pages/TeamDetailPage";
@@ -22,8 +23,9 @@ export default function SecuredRoutes() {
 			<>
 				<SideNav />
 				<TopNav />
-				<div className="ml-60 mt-16 px-8">
-					<div className="max-w-2xl mx-auto">
+				<BottomNav />
+				<div className="md:ml-60 mt-4 md:mt-16 px-2 md:px-8 mb-20 md:mb-0 transition-all">
+					<div className="max-w-3xl mx-auto">
 						<Switch>
 							<Route path="/teams/:id" exact>
 								<TeamDetailPage />

@@ -13,7 +13,7 @@ export default function TopNav() {
 	};
 
 	return (
-		<nav className="fixed top-0 w-full pl-64 h-12 px-4 bg-white z-10 shadow-sm flex justify-end items-center">
+		<nav className="fixed top-0 w-full pl-64 h-12 px-4 bg-white z-10 shadow-sm hidden md:flex justify-end items-center">
 			<Button className="text-red-700" variant="text" onClick={handleSignOut}>
 				Sign out
 			</Button>

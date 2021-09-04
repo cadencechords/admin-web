@@ -5,7 +5,7 @@ import UserGroupIcon from "@heroicons/react/outline/UserGroupIcon";
 
 export default function SideNav() {
 	return (
-		<div className="fixed top-0 left-0 w-60 h-screen shadow-lg flex items-center flex-col p-4 bg-white z-20">
+		<div className="hidden md:flex items-center flex-col fixed top-0 left-0 w-60 h-screen shadow-lg  p-4 bg-white z-20">
 			<SideNavLink to="/" className="mb-1" exact>
 				<HomeIcon className="mr-2 w-5 h-5" /> Home
 			</SideNavLink>
