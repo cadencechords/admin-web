@@ -1,11 +1,32 @@
 import Table from "./Table";
+import TableBody from "./TableBody";
+import TableData from "./TableData";
+import TableHead from "./TableHead";
+import TableRow from "./TableRow";
 import UserTableProfile from "./UserTableProfile";
+import { formatDateFromString } from "../utils/date";
+import { useHistory } from "react-router-dom";
 
 export default function UsersTable({ users }) {
-	let rows = users?.map((user) => [
-		<UserTableProfile user={user} />,
-		new Date(user.created_at).toDateString(),
-	]);
+	const router = useHistory();
 
-	return <Table headers={["Name", "Joined On"]} rows={rows} />;
+	const handleClick = (user) => {
+		router.push(`/users/${user.id}`);
+	};
+
+	return (
+		<Table>
+			<TableHead headers={["Name", "Joined On"]} />
+			<TableBody>
+				{users?.map((user) => (
+					<TableRow key={user.id} selectable onClick={() => handleClick(user)}>
+						<TableData>
+							<UserTableProfile user={user} />
+						</TableData>
+						<TableData>{formatDateFromString(user.created_at)}</TableData>
+					</TableRow>
+				))}
+			</TableBody>
+		</Table>
+	);
 }

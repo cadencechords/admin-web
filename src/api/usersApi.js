@@ -8,4 +8,12 @@ export default class UsersApi {
 	static getAll() {
 		return axios.get(USERS_URL, { headers: constructAuthHeaders() });
 	}
+
+	static getOne(id) {
+		return axios.get(`${USERS_URL}/${id}`, { headers: constructAuthHeaders() });
+	}
+
+	static getMemberships(userId) {
+		return axios.get(`${USERS_URL}/${userId}/memberships`, { headers: constructAuthHeaders() });
+	}
 }

@@ -1,20 +1,13 @@
+import ProfilePicture from "./ProfilePicture";
+
 export default function UserTableProfile({ user }) {
 	const hasName = () => {
 		return user.first_name || user.last_name;
 	};
 
 	return (
-		<div className="py-3 flex">
-			<div className="w-12 h-12 mr-4">
-				<div
-					className={`w-full h-full rounded-full bg-gray-200 `}
-					style={{
-						backgroundImage: `url('${user.image_url}')`,
-						backgroundPosition: "center",
-						backgroundSize: "cover",
-					}}
-				></div>
-			</div>
+		<div className="px-2 py-3 flex">
+			<ProfilePicture url={user.image_url} className="mr-4" />
 			<div className="flex flex-col items-start justify-center">
 				{hasName && (
 					<div>
