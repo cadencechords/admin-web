@@ -16,4 +16,8 @@ export default class TeamsApi {
 	static getMembers(teamId) {
 		return axios.get(`${TEAMS_URL}/${teamId}/memberships`, { headers: constructAuthHeaders() });
 	}
+
+	static getSongs(teamId) {
+		return axios.get(`${TEAMS_URL}/${teamId}/songs`, { headers: constructAuthHeaders() });
+	}
 }

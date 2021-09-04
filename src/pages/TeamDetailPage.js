@@ -10,7 +10,7 @@ import { useParams } from "react-router-dom";
 export default function TeamDetailPage() {
 	const [team, setTeam] = useState();
 	const [members, setMembers] = useState();
-	// const [songs, setSongs] = useState();
+	const [songs, setSongs] = useState();
 	// const [binders, setBinders] = useState();
 	const [loading, setLoading] = useState(false);
 	const id = useParams().id;
@@ -35,7 +35,13 @@ export default function TeamDetailPage() {
 		<PageLoader loading={loading}>
 			<TeamDetails team={team} />
 			<Divider />
-			<TeamTabs team={team} members={members} onMembersLoaded={setMembers} />
+			<TeamTabs
+				team={team}
+				members={members}
+				onMembersLoaded={setMembers}
+				songs={songs}
+				onSongsLoaded={setSongs}
+			/>
 		</PageLoader>
 	);
 }
