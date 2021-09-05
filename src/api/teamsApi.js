@@ -24,4 +24,8 @@ export default class TeamsApi {
 	static getBinders(teamId) {
 		return axios.get(`${TEAMS_URL}/${teamId}/binders`, { headers: constructAuthHeaders() });
 	}
+
+	static getSetlists(teamId) {
+		return axios.get(`${TEAMS_URL}/${teamId}/setlists`, { headers: constructAuthHeaders() });
+	}
 }
