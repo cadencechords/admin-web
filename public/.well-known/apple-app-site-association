@@ -4,10 +4,7 @@
     "details": [
       {
         "appID": "8RJQ79HLF3.com.cadence.admin",
-        "paths": [
-          "/teams",
-          "/"
-        ]
+        "paths": [ "*" ]
       }
     ]
   }
